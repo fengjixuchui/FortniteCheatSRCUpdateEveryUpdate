@@ -1,6 +1,6 @@
 /*
 
-Visual#9999
+Visual#9999, Updated by bunyip24#9999 
 */
 
 #include "../../Header Files/menu/menu.h"
@@ -201,13 +201,10 @@ VOID EndScene(ImGuiWindow& window) {
 			{
 				ImGui::Text("Memory");
 				ToggleButton("Memory", &config_system.item.Aimbot);
-				if (config_system.item.Aimbot)
-				{
-					ImGui::Text("Silent Aimbot");
-					ToggleButton("Silent", &config_system.item.SilentAimbot);
-					ImGui::Text("Trigger Aimbot");
-					ToggleButton("Trigger", &config_system.item.TriggerAimbot);
-				}
+				ImGui::Text("Silent Aimbot");
+				ToggleButton("Silent", &config_system.item.SilentAimbot);
+				ImGui::Text("Trigger Aimbot");
+				ToggleButton("Trigger", &config_system.item.TriggerAimbot);
 				const char* Points[] = { " Head", " Chest", " Pelvis" };
 				static int AimPoint = 0;
 				ImGui::Combo("Aim Point", &AimPoint, Points, IM_ARRAYSIZE(Points));
@@ -892,7 +889,7 @@ bool Render::Initialize() {
 
 	const auto pcall_present_discord = Helper::PatternScan(Discord::GetDiscordModuleBase(), "FF 15 ? ? ? ? 8B D8 E8 ? ? ? ? E8 ? ? ? ? EB 10");
 	auto presentSceneAdress = Helper::PatternScan(Discord::GetDiscordModuleBase(),
-		"48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B D9 41 8B F8");
+		"56 57 53 48 83 EC 30 44 89 C6");
 
 	DISCORD.HookFunction(presentSceneAdress, (uintptr_t)PresentHook, (uintptr_t)&PresentOriginal);
 
