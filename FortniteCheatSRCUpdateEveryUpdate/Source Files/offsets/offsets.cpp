@@ -125,7 +125,7 @@ namespace Offsets {
 	}
 
 	BOOLEAN Initialize() {
-		auto addr = Util::FindPattern("\x48\x8B\x1D\x00\x00\x00\x00\x48\x85\xDB\x74\x3B\x41", "xxx????xxxxxx");
+		auto addr = Util::FindPattern("\x48\x8B\x05\x00\x00\x00\x00\x4D\x8B\xC7", "xxx????xxx");
 		if (!addr) {
 			MessageBox(0, L"Please contact an administrator and give the error code:\n0x08", L"Error", 0);
 			return FALSE;
@@ -168,19 +168,19 @@ namespace Offsets {
 		Engine::StaticMeshComponent::StaticMesh = 0x480;
 		Engine::SkinnedMeshComponent::CachedWorldSpaceBounds = 0x600;
 		Engine::Actor::CustomTimeDilation = 0x98;
-		FortniteGame::FortPawn::bIsDBNO = 0x552;
-		FortniteGame::FortPawn::bIsDying = 0x538;
-		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xEC0;
+		FortniteGame::FortPawn::bIsDBNO = 0x56E;
+		FortniteGame::FortPawn::bIsDying = 0x540;
+		FortniteGame::FortPlayerStateAthena::TeamIndex = 0xED0;
 		FortniteGame::FortPickup::PrimaryPickupItemEntry = 0x2A8;
-		FortniteGame::FortItemDefinition::DisplayName = 0x80;
-		FortniteGame::FortItemDefinition::Tier = 0x64;
+		FortniteGame::FortItemDefinition::DisplayName = 0x88;
+		FortniteGame::FortItemDefinition::Tier = 0x6C;
 		FortniteGame::FortItemEntry::ItemDefinition = 0x18;
-		FortniteGame::FortPawn::CurrentWeapon = 0x5D0;
+		FortniteGame::FortPawn::CurrentWeapon = 0x5F0;
 		FortniteGame::FortWeapon::WeaponData = 0x378;
 		FortniteGame::FortWeaponItemDefinition::WeaponStatHandle = 0x820;
 		FortniteGame::FortProjectileAthena::FireStartLoc = 0x878;
 		FortniteGame::FortBaseWeaponStats::ReloadTime = 0xFC;
-		FortniteGame::BuildingContainer::bAlreadySearched = 0xC61;
+		FortniteGame::BuildingContainer::bAlreadySearched = 0xC81;
 
 
 		return TRUE;
